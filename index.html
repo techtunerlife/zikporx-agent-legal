@@ -313,7 +313,7 @@
   </div>
 
   <!-- TERMS OF USE -->
-  <div class="tab-panel" id="panel-terms">
+  <div class="tab-panel" id="panel-terms" data-anchor="terms">
     <div class="doc-eyebrow">Legal Document</div>
     <h1 class="doc-title">Terms of Use</h1>
     <div class="doc-meta">
@@ -408,7 +408,11 @@
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('panel-' + id).classList.add('active');
-    btn.classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+  // Support deep-linking via #terms hash
+  if (window.location.hash === '#terms') {
+    switchTab('terms', document.querySelector('.tab-btn:nth-child(2)'));
   }
 </script>
 </body>
