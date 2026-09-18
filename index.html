@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zikporx Agent — Legal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg:         #0D1117;
+    --surface:    #161C26;
+    --surface2:   #1E2A3A;
+    --border:     #263347;
+    --cyan:       #00D4FF;
+    --cyan-dim:   #00D4FF18;
+    --text:       #D8E4F0;
+    --text-muted: #5E7590;
+    --text-sub:   #8A9BB0;
+    --mono:       'JetBrains Mono', monospace;
+    --sans:       'Inter', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+
+  .wordmark {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .github-link {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 6px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .github-link:hover { border-color: var(--cyan); color: var(--text); }
+
+  .github-icon { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
+
+  .tab-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+  }
+
+  .tab-btn {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 14px 20px 12px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    margin-bottom: -1px;
+  }
+
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+
+  .content-wrap {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 52px 24px 80px;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .doc-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .doc-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    text-wrap: balance;
+    margin-bottom: 8px;
+  }
+
+  .doc-meta {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .doc-meta a { color: inherit; }
+
+  .section { margin-bottom: 40px; }
+
+  .section-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    font-family: var(--mono);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section p { color: var(--text-sub); margin-bottom: 14px; max-width: 65ch; }
+  .section p:last-child { margin-bottom: 0; }
+
+  .section ul { list-style: none; margin-bottom: 14px; }
+
+  .section ul li {
+    color: var(--text-sub);
+    padding: 4px 0 4px 18px;
+    position: relative;
+    max-width: 65ch;
+  }
+
+  .section ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.8em;
+  }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  .highlight-box {
+    background: var(--cyan-dim);
+    border: 1px solid #00D4FF2A;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 0.88rem;
+    color: var(--text-sub);
+    line-height: 1.65;
+    max-width: 65ch;
+  }
+
+  .highlight-box strong { color: var(--cyan); }
+
+  .contact-link {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--cyan);
+    text-decoration: none;
+    border-bottom: 1px solid #00D4FF44;
+    padding-bottom: 1px;
+  }
+
+  .contact-link:hover { border-bottom-color: var(--cyan); }
+
+  .doc-footer {
+    margin-top: 52px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .doc-footer a { color: var(--text-muted); text-decoration: none; }
+  .doc-footer a:hover { color: var(--cyan); }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <span class="wordmark">Zikporx Agent</span>
+  <a class="github-link" href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">
+    <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+    techtunerlife/zikporx-agent
+  </a>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('privacy', this)">Privacy Policy</button>
+  <button class="tab-btn" onclick="switchTab('terms', this)">Terms of Use</button>
+</div>
+
+<div class="content-wrap">
+
+  <!-- PRIVACY POLICY -->
+  <div class="tab-panel active" id="panel-privacy">
+    <div class="doc-eyebrow">Legal Document</div>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <div class="doc-meta">
+      Effective Date: September 17, 2026 &nbsp;·&nbsp;
+      App: Zikporx Agent (iOS) &nbsp;·&nbsp;
+      Source: <a href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Summary:</strong> Zikporx Agent is a self-hosted infrastructure management tool. Your infrastructure credentials and operational data stay on your own Hub server and iOS device. We do not collect, sell, or have access to your data.
+    </div>
+
+    <div class="section">
+      <div class="section-title">1. What We Are</div>
+      <p>Zikporx Agent is an open-source iOS application that communicates with a self-hosted Hub server (the "Hub") you operate on your own infrastructure. The source code is publicly available at <a class="contact-link" href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>.</p>
+      <p>There is no central Zikporx cloud service that processes your infrastructure data. You run the Hub; you own the data.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. Data Stored on Your Device</div>
+      <p>The iOS app stores the following locally, in the iOS Keychain:</p>
+      <ul>
+        <li>Hub server URL and TLS certificate fingerprint</li>
+        <li>Session bearer token obtained after pairing</li>
+        <li>No infrastructure credentials are stored on the device</li>
+      </ul>
+      <p>This data is protected by iOS Keychain encryption and, where enabled, biometric authentication. It is never transmitted to any third party.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3. Data on Your Hub Server</div>
+      <p>The Hub server you self-host stores:</p>
+      <ul>
+        <li>Operational metrics and resource state for your infrastructure</li>
+        <li>An append-only audit log of all actions taken</li>
+        <li>A knowledge store used by the expert/AI system (local only)</li>
+        <li>Proxmox and other integration credentials you configure</li>
+      </ul>
+      <p>All of this data resides exclusively on the server you control. We have no access to it.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4. Optional Cloud Relay</div>
+      <p>If you enable push notifications, an optional Zikporx cloud relay maps an opaque installation identifier to your Apple Push Notification (APNs) token. This relay:</p>
+      <ul>
+        <li>Handles only opaque IDs and push tokens — no infrastructure data</li>
+        <li>Never receives credentials, metrics, hostnames, or operational details</li>
+        <li>Is entirely optional; the app functions fully without it</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. No Analytics or Tracking</div>
+      <p>Zikporx Agent does not include any analytics SDKs, crash reporters, advertising identifiers, or behavioral tracking. We do not track how you use the app.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. Third-Party Services</div>
+      <p>The app uses Apple's system frameworks (SwiftUI, WidgetKit, App Intents, Keychain). These are governed by Apple's own privacy policy. No other third-party services are included.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">7. Children's Privacy</div>
+      <p>Zikporx Agent is a professional infrastructure management tool not directed at children under 13. We do not knowingly collect any information from children.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Changes to This Policy</div>
+      <p>We may update this policy. Changes are committed to the public repository at <a class="contact-link" href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a> with full version history. Continued use of the app after a change constitutes acceptance.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Contact</div>
+      <p>Questions about this policy can be raised as an issue on the GitHub repository or by contacting us at <a class="contact-link" href="mailto:mralpha152@gmail.com">mralpha152@gmail.com</a>.</p>
+    </div>
+
+    <div class="doc-footer">
+      <span>Zikporx Agent · Privacy Policy · v1.0</span>
+      <a href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>
+    </div>
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div class="tab-panel" id="panel-terms">
+    <div class="doc-eyebrow">Legal Document</div>
+    <h1 class="doc-title">Terms of Use</h1>
+    <div class="doc-meta">
+      Effective Date: September 17, 2026 &nbsp;·&nbsp;
+      App: Zikporx Agent (iOS) &nbsp;·&nbsp;
+      Source: <a href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Summary:</strong> Zikporx Agent is open-source software provided as-is. You are responsible for the infrastructure you connect it to. Use it lawfully and do not use it to cause harm.
+    </div>
+
+    <div class="section">
+      <div class="section-title">1. Acceptance</div>
+      <p>By downloading, installing, or using Zikporx Agent (the "App") or the Zikporx Hub server software (the "Hub"), you agree to these Terms of Use. If you do not agree, do not use the software.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. Open-Source License</div>
+      <p>The source code for both the iOS app and Hub server is available at <a class="contact-link" href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>. Your use of the source code is governed by the license found in that repository.</p>
+      <p>These Terms of Use apply to your use of the compiled App and Hub software, separately from and in addition to the source code license.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3. Permitted Use</div>
+      <p>You may use the App and Hub to manage infrastructure that you own or are authorized to administer. Specifically:</p>
+      <ul>
+        <li>Managing Linux hosts, Docker containers, and Proxmox guests you operate</li>
+        <li>Monitoring and observing system health on your own infrastructure</li>
+        <li>Automating operational tasks within the scope of your authorization</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4. Prohibited Use</div>
+      <p>You must not use the App or Hub to:</p>
+      <ul>
+        <li>Access, manage, or interfere with systems you are not authorized to control</li>
+        <li>Violate any applicable law or regulation</li>
+        <li>Circumvent security controls or gain unauthorized access to any system</li>
+        <li>Cause harm, disruption, or damage to any infrastructure or third party</li>
+        <li>Resell or redistribute the compiled software without authorization</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. Your Responsibilities</div>
+      <p>Because Zikporx Agent connects to and issues commands to live infrastructure, you accept full responsibility for:</p>
+      <ul>
+        <li>Securing your Hub server, including TLS configuration and network exposure</li>
+        <li>The actions taken through the App on your infrastructure</li>
+        <li>Maintaining appropriate access controls and backups</li>
+        <li>Ensuring any person with access to the paired device is authorized to act on your infrastructure</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. No Warranty</div>
+      <p>The App and Hub are provided <strong>"as is"</strong>, without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+      <p>Infrastructure management software can cause unintended changes to systems when misconfigured. You assume all risk associated with its use.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">7. Limitation of Liability</div>
+      <p>To the fullest extent permitted by applicable law, the developers of Zikporx Agent shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the software, including data loss, system downtime, or infrastructure damage.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Updates and Modifications</div>
+      <p>We may update the App, Hub software, or these Terms at any time. Updates to these Terms are committed to the public repository at <a class="contact-link" href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>. Continued use after a change constitutes acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Governing Law</div>
+      <p>These Terms are governed by applicable law. Any disputes shall be resolved in the jurisdiction where the developer is located, to the extent permitted by law.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Contact</div>
+      <p>Questions or concerns about these Terms can be raised as an issue on the GitHub repository or by contacting <a class="contact-link" href="mailto:mralpha152@gmail.com">mralpha152@gmail.com</a>.</p>
+    </div>
+
+    <div class="doc-footer">
+      <span>Zikporx Agent · Terms of Use · v1.0</span>
+      <a href="https://github.com/techtunerlife/zikporx-agent" target="_blank" rel="noopener">github.com/techtunerlife/zikporx-agent</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
